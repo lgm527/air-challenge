@@ -2,6 +2,7 @@ import React, {useState} from 'react';
 import './App.css';
 import Filter from './components/Filter';
 import PersonContainer from './containers/PersonContainer';
+import { fetchPeople, PersonObject } from './API';
 
 const App: React.FC = () => {
   // loading state
@@ -18,6 +19,7 @@ const App: React.FC = () => {
     // setPeople()
   }
 
+  fetchPeople()
 
   return (
     <div className="App">

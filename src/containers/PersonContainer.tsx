@@ -1,16 +1,15 @@
 import React from 'react';
-import Person from './components/Person';
-import { PersonObject } from '../App';
+import Person from '../components/Person';
 
 interface PersonContainerProps {
-    people: <PersonObject>[] | null;
+    people?: any[] | null;
 }
 
 const PersonContainer: React.FC<PersonContainerProps> = ({people}) => {
-    const people = people.map((person) => <Person person={...person} />)
+
     return (
         <div>
-            {people}
+            {!!people && people.map((person) => <Person person={person} />)}
         </div>
     )
 }

@@ -1,21 +1,22 @@
 import React from 'react';
 
-export type PersonObject = {
-    id: number;
-    name: string;
+export interface PersonProps {
+    person: {    
+    id: string;
+    fullName: string;
     email: string;
     avatar: string;
     description: string;
-  }
-
-interface PersonProps {
-    person: <PersonObject>
+    }
 }
 
-const Person: React.FC<PersonProps> = ({id, name, email, avatar, description}) => {
+const Person: React.FC<PersonProps> = ({...person}) => {
     return (
-        <div>
-            <input onChange={filterPeople} />
+        <div id={id}>
+            <img src={avatar}/>
+            <p>{fullName}</p>
+            <p>{email}</p>
+            <p>{description}</p>
         </div>
     )
 }

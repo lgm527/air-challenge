@@ -10,10 +10,13 @@ export interface PersonProps {
     }
 }
 
-const Person: React.FC<PersonProps> = ({...person}) => {
+const Person: React.FC<PersonProps> = ({person}) => {
+    const {id, fullName, email, avatar, description} = person;
+   
+    
     return (
         <div id={id}>
-            <img src={avatar}/>
+            <img src={avatar} alt='avatar'/>
             <p>{fullName}</p>
             <p>{email}</p>
             <p>{description}</p>

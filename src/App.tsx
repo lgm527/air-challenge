@@ -1,14 +1,14 @@
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import './App.css';
 import Filter from './components/Filter';
 import PersonContainer from './containers/PersonContainer';
-import { fetchPeople, PersonObject } from './API';
+import { getPeople, PersonObject } from './API';
 
 const App: React.FC = () => {
   // loading state
   const [loading, setLoading] = useState(false)
   // save people in state
-  const [people, setPeople] = useState<PersonObject[]>([])
+  const [people, setPeople] = useState<Array<PersonObject>>([])
   // capture user input
   const [filter, setFilter] = useState('')
 
@@ -19,7 +19,25 @@ const App: React.FC = () => {
     // setPeople()
   }
 
-  fetchPeople()
+  useEffect(() => {
+    setLoading(true);
+
+    const peopleData = async () => {
+      await getPeople();
+    }
+    // peopleData()
+    setPeople(peopleData())
+
+    // async function newPeople() {
+    //   await getPeople()
+    // }
+
+    // let peopleData = newPeople()
+
+    //   setPeople(peopleData)
+    //   setLoading(false)
+
+  }, [filter, people])
 
   return (
     <div className="App">

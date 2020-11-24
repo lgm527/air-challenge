@@ -19,17 +19,22 @@ const App: React.FC = () => {
     // setPeople()
   }
 
+  useEffect(() => {
+    getPeople()
+  }, [])
   
 
   useEffect(() => {
     // setLoading(true);
-
+    //
     // let peopleData: Promise<PersonObject[]> = getPeople()
 
     //   setPeople(peopleData)
     //   setLoading(false)
 
   }, [filter])
+
+  
 
   return (
     <div className="App">

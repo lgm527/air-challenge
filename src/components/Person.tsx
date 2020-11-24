@@ -3,7 +3,7 @@ import React from 'react';
 export interface PersonProps {
     person: {    
     id: string;
-    fullName: string;
+    name: string;
     email: string;
     avatar: string;
     description: string;
@@ -11,13 +11,13 @@ export interface PersonProps {
 }
 
 const Person: React.FC<PersonProps> = ({person}) => {
-    const {id, fullName, email, avatar, description} = person;
+    const {id, name, email, avatar, description} = person;
    
     
     return (
         <div id={id}>
             <img src={avatar} alt='avatar'/>
-            <p>{fullName}</p>
+            <p>{name}</p>
             <p>{email}</p>
             <p>{description}</p>
         </div>

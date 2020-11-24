@@ -1,4 +1,3 @@
-
 import data from './people.json';
 
 export type PersonObject = {

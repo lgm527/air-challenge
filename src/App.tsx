@@ -19,25 +19,17 @@ const App: React.FC = () => {
     // setPeople()
   }
 
+  
+
   useEffect(() => {
-    setLoading(true);
+    // setLoading(true);
 
-    const peopleData = async () => {
-      await getPeople();
-    }
-    // peopleData()
-    setPeople(peopleData())
-
-    // async function newPeople() {
-    //   await getPeople()
-    // }
-
-    // let peopleData = newPeople()
+    // let peopleData: Promise<PersonObject[]> = getPeople()
 
     //   setPeople(peopleData)
     //   setLoading(false)
 
-  }, [filter, people])
+  }, [filter])
 
   return (
     <div className="App">

@@ -20,7 +20,9 @@ const App: React.FC = () => {
   }
 
   useEffect(() => {
-    getPeople()
+    setPeople(getPeople());
+    
+
   }, [])
   
 

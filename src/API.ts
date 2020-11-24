@@ -9,18 +9,12 @@ export type PersonObject = {
     description: string;
 }
 
-export const getPeople = () => {
-    console.log(data);
-    
-    // return data.map((person: PersonObject) => {
+export const getPeople = () => {       
 
-    //     {
-    //         id: person.id,
-    //         name: person.name,
-    //         email: person.email,
-    //         avatar: person.avatar,
-    //         description: person.description,
-    //     }
+    return data.map((person: PersonObject) => (
+        {
+            ...person
+        }
+    ))
 
-    // })        
 }

@@ -9,7 +9,7 @@ const PersonContainer: React.FC<PersonContainerProps> = ({people}) => {
 
     return (
         <div>
-            {!!people && people.map((person) => <Person person={person} />)}
+            {!!people && people.map((person) => <Person person={person} key={person.id}/>)}
         </div>
     )
 }

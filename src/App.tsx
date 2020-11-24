@@ -4,6 +4,8 @@ import Filter from './components/Filter';
 import PersonContainer from './containers/PersonContainer';
 import { getPeople, PersonObject } from './API';
 
+const ALL_PEOPLE = getPeople();
+
 const App: React.FC = () => {
   // loading state
   const [loading, setLoading] = useState(false)
@@ -13,16 +15,16 @@ const App: React.FC = () => {
   const [filter, setFilter] = useState('')
 
   const filterPeople = (event: React.ChangeEvent<HTMLInputElement>) => {
+    let userFilter = event.currentTarget.value;
     // save user input in state
-    // setFilter()
+    setFilter(userFilter)
     // use input to filter people list and rerender results
-    // setPeople()
+    let filteredPeople = ALL_PEOPLE.filter((person) => person.name.toLowerCase().includes(userFilter))
+    setPeople(filteredPeople)
   }
 
   useEffect(() => {
     setPeople(getPeople());
-    
-
   }, [])
   
 

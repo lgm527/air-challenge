@@ -1,4 +1,5 @@
 import React from 'react';
+import '../styles/Filter.css';
 
 interface FilterProps {
     filterPeople: (event: React.ChangeEvent<HTMLInputElement>) => void;
